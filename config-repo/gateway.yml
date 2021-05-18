@@ -16,14 +16,21 @@ hystrix:
 ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 10000
-
+#zuul网关
 zuul:
   ignoredServices: '*'
   routes:
+    acc-service:
+      path: /acc/**
+      url: http://localhost:80/acc/
     auth-service:
       path: /uaa/**
       stripPrefix: false
       sensitiveHeaders:
+    hello-service:
+      path: /hello/**
+      #url: http://localhost:83/hello/
+      serviceId: hello-service
     svca-service:
       path: /svca/**
       sensitiveHeaders:

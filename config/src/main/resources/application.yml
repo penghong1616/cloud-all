@@ -13,14 +13,17 @@ eureka:
       defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
 
 spring:
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/zhangxd1989/spring-boot-cloud
-          search-paths: config-repo
+        native:
+          search-locations: D:/project/idea/spring-boot-cloud/config-repo
   rabbitmq:
     host: rabbitmq
+    username: penghong
+    password: 123123ph@Rm
 
 security:
   user:

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway
+    name: hello-service
   cloud:
     #配置中心
     config:

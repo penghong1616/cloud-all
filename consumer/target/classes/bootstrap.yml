@@ -1,6 +1,7 @@
+
 spring:
   application:
-    name: gateway
+    name: consumer-service
   cloud:
     #配置中心
     config:
@@ -13,3 +14,6 @@ spring:
         max-interval: 10000
         multiplier: 2
         max-attempts: 10
+server:
+  port: 84
+  context-path: consumer

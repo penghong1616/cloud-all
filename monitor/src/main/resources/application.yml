@@ -23,6 +23,8 @@ eureka:
 spring:
   rabbitmq:
     host: rabbitmq
+    username: penghong
+    password: 123123ph@Rm
   boot:
     admin:
       routes:
@@ -30,7 +32,11 @@ spring:
       turbine:
         clusters: default
         location: http://monitor:${turbine.stream.port}
-
+info:
+  app.name: monitor
+  company.name: ngos
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@
 security:
   user:
     name: admin

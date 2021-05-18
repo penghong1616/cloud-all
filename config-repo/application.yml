@@ -5,7 +5,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
-
+user:
+  name: ph
 hystrix:
   command:
     default:
@@ -21,6 +22,8 @@ ribbon:
 spring:
   rabbitmq:
     host: rabbitmq
+    username: penghong
+    password: 123123ph@Rm
   sleuth:
     sampler:
       percentage: 1

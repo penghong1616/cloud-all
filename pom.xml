@@ -26,6 +26,9 @@
         <module>svca-service</module>
         <module>svcb-service</module>
         <module>zipkin</module>
+        <module>hello</module>
+        <module>provider</module>
+        <module>consumer</module>
     </modules>
 
     <properties>
@@ -128,6 +131,16 @@
                                 <include>${project.build.finalName}.jar</include>
                             </resource>
                         </resources>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <configuration>
+                        <!-- 读取 src/main/resources 资源目录下，以 $ 开头和 $ 符号结尾的配置文件信息-->
+                        <delimiters>
+                            <delimiter>@</delimiter>
+                        </delimiters>
                     </configuration>
                 </plugin>
             </plugins>

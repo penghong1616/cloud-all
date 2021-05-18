@@ -1,0 +1,8 @@
+server:
+  port: 83
+  context-path: /hello
+info:
+  app.name: hello-service
+  company.name: nego
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
