@@ -3,13 +3,7 @@ logging:
     org.springframework.cloud.netflix.zuul.filters.post.SendErrorFilter: error
 server:
   port: 83
-eureka:
-  instance:
-    hostname: registry
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://admin:admin@registry/eureka/
+
 turbine:
   stream:
     port: 8041

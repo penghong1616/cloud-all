@@ -1,4 +1,4 @@
-package cn.zhangxd.monitor;
+package cn.zhangxd.hustrixmonitor;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;

@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 81
 
 eureka:
   instance:
@@ -10,7 +10,7 @@ eureka:
       user.password: ${security.user.password}
   client:
     service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+      defaultZone: http://admin:admin@registry/eureka/
 
 spring:
   profiles:
@@ -27,5 +27,5 @@ spring:
 
 security:
   user:
-    name: user
-    password: ${CONFIG_SERVER_PASSWORD:password}
+    name: admin
+    password: admin

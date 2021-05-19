@@ -1,5 +1,5 @@
 server:
-  port: 8060
+  port: 82
 
 management:
   security:
@@ -29,11 +29,15 @@ zuul:
       sensitiveHeaders:
     hello-service:
       path: /hello/**
-      #url: http://localhost:83/hello/
-      serviceId: hello-service
+      serviceId: hello-service #路由到这个服务中去
     svca-service:
       path: /svca/**
       sensitiveHeaders:
     svcb-service:
       path: /svcb/**
       sensitiveHeaders:
+#安全登录验证
+security:
+  user:
+    name: admin
+    password: admin

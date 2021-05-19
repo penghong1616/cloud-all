@@ -1,8 +1,10 @@
 server:
   port: 83
-  context-path: /hello
 info:
-  app.name: hello-service
-  company.name: nego
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  app:
+    name: hello-service
+  company:
+    name: ngos
+  build:
+    artifactId: @project.artifactId@
+    version: @project.version@

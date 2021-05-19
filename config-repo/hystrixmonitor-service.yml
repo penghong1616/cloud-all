@@ -1,15 +1,22 @@
 server:
-  port: 84
-  context-path: /consumer
+  port: 86
+  context-path: /hytrixmonitor
 #feign配置
 feign:
   httpclient:
     enabled: true
   hystrix:
     enabled: true
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
 #服务信息
 info:
-  app.name: consumer-service
+  app.name: hytrixmonitor-service
   company.name: ngos
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+security:
+    user:
+      name: admin
+      password: admin
