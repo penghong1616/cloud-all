@@ -5,13 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>cn.zhangxd</groupId>
-        <artifactId>spring-boot-cloud</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>com.ph</groupId>
+        <artifactId>cloud-all</artifactId>
+        <version>v1.0</version>
     </parent>
 
     <artifactId>zipkin</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
 
