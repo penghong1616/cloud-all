@@ -1,6 +1,6 @@
-package com.ph.consumer.controller;
+package com.ph.user.controller;
 
-import com.ph.consumer.service.UserService;
+import com.ph.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

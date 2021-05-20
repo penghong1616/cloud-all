@@ -10,6 +10,11 @@ spring:
     host: rabbitmq
     username: penghong
     password: 123123ph@Rm
+  zipkin:
+    base-url: http://localhost:85
+  sleuth:
+    sampler:
+      percentage: 1.0
 user:
   name: ph
 management:

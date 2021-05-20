@@ -1,7 +1,6 @@
-package com.ph.hello.controller;
+package com.ph.user.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,13 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2021/05/18/ 14:59
  */
 @RestController
-@RefreshScope
-public class HelloController {
+public class ConsumerController {
   @Value("${user.name}")
   private  String name;
-  @GetMapping("/hello")
+  @GetMapping("/consumer")
   public String sayHello(){
-    return "hello:"+name;
+    return "我是consumer："+name;
   }
 
 }

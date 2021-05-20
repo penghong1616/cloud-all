@@ -1,6 +1,6 @@
-package com.ph.consumer.service;
+package com.ph.user.service;
 
-import com.ph.consumer.fallback.UserServiceFallBack;
+import com.ph.user.fallback.UserServiceFallBack;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author: penghong
  * @date: 2021/05/18/ 16:45
  */
-@FeignClient(value = "provider-service",path = "/provider/user",fallback = UserServiceFallBack.class)
+@FeignClient(value = "provider-service",path = "/user",fallback = UserServiceFallBack.class)
 public interface UserService {
   @GetMapping("/sayHello")
   String sayHello();

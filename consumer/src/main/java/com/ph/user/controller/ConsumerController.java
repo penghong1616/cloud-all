@@ -1,4 +1,4 @@
-package com.ph.consumer.controller;
+package com.ph.user.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

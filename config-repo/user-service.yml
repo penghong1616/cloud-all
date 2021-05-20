@@ -1,0 +1,5 @@
+server:
+  port: 93
+management:
+  security:
+    enabled: false

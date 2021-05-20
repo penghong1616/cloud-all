@@ -1,5 +1,5 @@
 # 基于 Spring Cloud 的微服务架构
-
+# 项目基础来源:https://github.com/zhangxd1989/spring-boot-cloud
 本项目是一个基于 Spring Boot、Spring Cloud、Spring Oauth2 和 Spring Cloud Netflix 等框架构建的微服务项目。
 
 # 技术栈
