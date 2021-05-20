@@ -5,43 +5,17 @@ eureka:
   client:
     service-url:
       defaultZone: http://admin:admin@registry/eureka/
-user:
-  name: ph
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 10000
-management:
-  endpoints:
-    web:
-      exposure:
-        include:  hystrix.stream
-ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
-
 spring:
   rabbitmq:
     host: rabbitmq
     username: penghong
     password: 123123ph@Rm
-  sleuth:
-    sampler:
-      percentage: 1
-    integration:
-      enabled: false
-    scheduled:
-      skip-pattern: "^org.*HystrixStreamTask$"
-
-authserver:
-    hostname: auth-service
-    port: 5000
-    contextPath: /uaa
-
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
+user:
+  name: ph
+management:
+  security:
+    enabled: false
+info:
+  app-name: ${spring.application.name}
+  company-name: ngos
+  build.version: ${spring.application.version}

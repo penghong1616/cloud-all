@@ -1,5 +1,6 @@
 server:
-  port: 8081
+  port: 89
+
 name: zhangxd
 
 eureka:
@@ -7,10 +8,11 @@ eureka:
     metadata-map:
       user.name: ${security.user.name}
       user.password: ${security.user.password}
+
 security:
   user:
-    name: admin
-    password: admin
+    name: user
+    password: password
   oauth2:
     client:
       clientId: svca-service
@@ -18,3 +20,6 @@ security:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
       grant-type: client_credentials
       scope: server
+    resource:
+      tokenInfoUri: http://sso.pomit.cn/oauth/check_token
+      userInfoUri: http://sso.pomit.cn/oauth/check_token

@@ -4,10 +4,10 @@ spring:
   cloud:
     #配置中心
     config:
-      uri: http://config:8888
+      uri: http://config:81
       fail-fast: true
-      username: user
-      password: ${CONFIG_SERVER_PASSWORD:password}
+      username: admin
+      password: admin
       retry:
         initial-interval: 2000
         max-interval: 10000

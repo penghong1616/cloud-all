@@ -1,10 +1,5 @@
 server:
-  port: 83
-info:
-  app:
-    name: hello-service
-  company:
-    name: ngos
-  build:
-    artifactId: @project.artifactId@
-    version: @project.version@
+  port: 86
+management:
+  security:
+    enabled: false

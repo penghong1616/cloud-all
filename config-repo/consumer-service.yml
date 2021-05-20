@@ -1,15 +1,5 @@
 server:
-  port: 84
-  context-path: /consumer
-#feign配置
-feign:
-  httpclient:
-    enabled: true
-  hystrix:
-    enabled: true
-#服务信息
-info:
-  app.name: consumer-service
-  company.name: ngos
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  port: 91
+management:
+  security:
+    enabled: false

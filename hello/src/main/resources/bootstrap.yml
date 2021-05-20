@@ -1,6 +1,7 @@
 spring:
   application:
     name: hello-service
+    version: v1.0
   cloud:
     #配置中心
     config:
@@ -13,3 +14,4 @@ spring:
         max-interval: 10000
         multiplier: 2
         max-attempts: 10
+

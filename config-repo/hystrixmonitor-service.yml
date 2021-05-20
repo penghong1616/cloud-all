@@ -1,6 +1,5 @@
 server:
-  port: 86
-  context-path: /hytrixmonitor
+  port: 83
 #feign配置
 feign:
   httpclient:
@@ -16,6 +15,9 @@ info:
   company.name: ngos
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+management:
+  security:
+    enabled: false
 security:
     user:
       name: admin

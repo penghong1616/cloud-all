@@ -1,8 +1,6 @@
 server:
-  port: 85
-  context-path: /provider
+  port: 88
 info:
-  app.name: provider-service
-  company.name: ngos
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  app-name: provider-service
+  company-name: ngos
+  build.version: v1.0

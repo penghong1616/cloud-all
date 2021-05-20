@@ -3,7 +3,6 @@ logging:
     org.springframework.cloud.netflix.zuul.filters.post.SendErrorFilter: error
 server:
   port: 83
-
 turbine:
   stream:
     port: 8041
@@ -14,6 +13,8 @@ spring:
     password: 123123ph@Rm
   boot:
     admin:
+      username: user
+      password: admin
       routes:
         endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
       turbine:
@@ -27,7 +28,6 @@ info:
   build:
     artifactId: @project.artifactId@
     version: @project.version@
-security:
-  user:
-    name: admin
-    password: ${MONITOR_SERVER_PASSWORD:admin}
+management:
+  security:
+    enabled: false
