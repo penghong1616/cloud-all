@@ -1,0 +1,31 @@
+server:
+  port: 81
+
+eureka:
+  instance:
+    hostname: registry
+    prefer-ip-address: true
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+  client:
+    service-url:
+      defaultZone: http://admin:admin@registry/eureka/
+
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: D:/project/idea/spring-boot-cloud/config-repo
+  rabbitmq:
+    host: rabbitmq
+    username: penghong
+    password: 123123ph@Rm
+
+security:
+  user:
+    name: admin
+    password: admin
