@@ -1,6 +1,7 @@
 package com.ph.svca.config;
 
 import feign.RequestInterceptor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +18,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 public class ServiceAConfiguration extends ResourceServerConfigurerAdapter {
 
     @Bean
-    public RequestInterceptor oauth2FeignRequestInterceptor(OAuth2ClientContext oauth2ClientContext,
+    public RequestInterceptor oauth2FeignRequestInterceptor(@Qualifier("oauth2ClientContext") OAuth2ClientContext oauth2ClientContext,
                                                             ClientCredentialsResourceDetails resource) {
         return new OAuth2FeignRequestInterceptor(oauth2ClientContext, resource);
     }
@@ -25,6 +26,7 @@ public class ServiceAConfiguration extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .anyRequest().authenticated();
+            .antMatchers("/user/registry").permitAll()
+            .anyRequest().authenticated();
     }
 }

@@ -23,7 +23,6 @@
         <module>gateway</module>
         <module>auth-service</module>
         <module>svca-service</module>
-        <module>svcb-service</module>
         <module>zipkin</module>
         <module>hello</module>
         <module>provider</module>
@@ -31,6 +30,7 @@
         <module>hystrixmonitor</module>
         <module>admin-monitor</module>
         <module>user-service</module>
+        <module>cloud-commom</module>
     </modules>
 
     <properties>

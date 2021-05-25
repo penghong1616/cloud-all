@@ -19,7 +19,7 @@ spring:
     config:
       server:
         native:
-          search-locations: D:/project/idea/spring-boot-cloud/config-repo
+          search-locations: D:/project/idea/cloud-all/config-repo
   rabbitmq:
     host: rabbitmq
     username: penghong

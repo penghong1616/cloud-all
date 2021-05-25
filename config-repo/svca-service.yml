@@ -8,18 +8,25 @@ eureka:
     metadata-map:
       user.name: ${security.user.name}
       user.password: ${security.user.password}
-
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.20.19.116:3309/spring-cloud-auth?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 security:
-  user:
-    name: user
-    password: password
   oauth2:
-    client:
-      clientId: svca-service
-      clientSecret: ${security.user.password}
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
-      grant-type: client_credentials
-      scope: server
     resource:
-      tokenInfoUri: http://sso.pomit.cn/oauth/check_token
-      userInfoUri: http://sso.pomit.cn/oauth/check_token
+      # 获取当前Token的用户信息
+      user-info-uri: http://localhost:84/uaa/users/current
+    client:
+      clientId: service-hi
+      clientSecret: 123456
+      # 获取Token
+      accessTokenUri: http://localhost:84/uaa/oauth/token
+      grant-type: client_credentials,password
+      scope: server
