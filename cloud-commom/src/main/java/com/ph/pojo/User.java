@@ -3,16 +3,13 @@ package com.ph.pojo;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -22,7 +19,9 @@ import org.springframework.security.core.userdetails.UserDetails;
  * @date: 2021/05/21/ 10:45
  */
 @Entity
+@Table(name = "user")
 public class User implements UserDetails, Serializable {
+
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,15 +32,11 @@ public class User implements UserDetails, Serializable {
 
   @Column
   private String password;
-
-  @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-      inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+  @Transient
   private List<Role> authorities;
-
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return authorities;
+    return null;
   }
 
   @Override
@@ -92,16 +87,16 @@ public class User implements UserDetails, Serializable {
     this.password = password;
   }
 
-  public void setAuthorities(List<Role> authorities) {
-    this.authorities = authorities;
-  }
-
   public User() {
   }
 
   public User(String username, String password, List<Role> authorities) {
     this.username = username;
     this.password = password;
+    this.authorities = authorities;
+  }
+
+  public void setAuthorities(List<Role> authorities) {
     this.authorities = authorities;
   }
 }

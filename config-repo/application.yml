@@ -17,13 +17,14 @@ spring:
       percentage: 1.0
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://172.20.19.116:3309/spring-cloud-auth?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    url: jdbc:mysql://172.20.19.116:3309/spring-cloud?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: root
     password: root
-    jpa:
-      hibernate:
-        ddl-auto: update
-      show-sql: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
 user:
   name: ph
 info:

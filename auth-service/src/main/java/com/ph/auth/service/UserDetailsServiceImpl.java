@@ -31,14 +31,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    logger.info("通过用户名查找用户：{}", username);
-    //User user=userRepository.findByUsername(username);
-    String password = passwordEncoder.encode("admin");
-    username = "admin";
-    logger.info("密码：{}", password);
+    logger.info("验证用户：{}",username);
+    User userEntity= userRepository.findByUsername(username);
+    String name = userEntity.getUsername();
+    String password = passwordEncoder.encode(userEntity.getPassword());
+    //$2a$10$WaB6HYEl7kRAz0xZrwzmw.csI6S/zQNS0ljrQ1PcrJBRl7QiY8mrq
+    logger.info("密码：{}",password);
     List<Role> authorities = new ArrayList<Role>();
     authorities.add(new Role(1L, "ROLE_ADMIN"));
     authorities.add(new Role(2L, "ROLE_USER"));
-    return new User(username, password, authorities);
+
+    return new User(name, password, authorities);
   }
 }

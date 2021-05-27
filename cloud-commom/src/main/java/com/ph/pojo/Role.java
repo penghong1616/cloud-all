@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
@@ -13,7 +14,9 @@ import org.springframework.security.core.GrantedAuthority;
  * @date: 2021/05/21/ 11:14
  */
 @Entity
-public class Role implements GrantedAuthority {
+@Table(name="role")
+public class Role implements GrantedAuthority{
+  private static final long serialVersionUID = 7255766074662239522L;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -26,6 +29,8 @@ public class Role implements GrantedAuthority {
     this.name=name;
   }
 
+  public Role() {
+  }
   // setter getter
 
   @Override

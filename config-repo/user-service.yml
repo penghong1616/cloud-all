@@ -1,5 +1,14 @@
 server:
   port: 93
-management:
-  security:
-    enabled: false
+security:
+  oauth2:
+    resource:
+      # 获取当前Token的用户信息
+      #user-info-uri: http://localhost:84/uaa/users/current
+    client:
+      clientId: user-service
+      clientSecret: user-Service
+      # 获取Token
+      accessTokenUri: http://localhost:84/oauth/token
+      grant-type: client_credentials,password
+      scope: server
