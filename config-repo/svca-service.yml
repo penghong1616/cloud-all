@@ -24,9 +24,19 @@ security:
       # 获取当前Token的用户信息
       user-info-uri: http://localhost:84/user/current
     client:
-      clientId: user
-      clientSecret: user
+      clientId: svca
+      clientSecret: svca
       # 获取Token
       accessTokenUri: http://localhost:84/oauth/token
-      grant-type: client_credentials,password
-      scope: server
+      #grant-type: client_credentials
+      scope: read
+
+hystrix:
+  command:
+    default:  #default全局有效，service id指定应用有效
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000 #断路器超时时间，默认1000ms
