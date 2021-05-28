@@ -52,7 +52,7 @@ public class ResourceServerConfig {
       public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated()
             .and()
-            .requestMatchers().antMatchers("/user/**");
+            .requestMatchers().antMatchers("/**");
       }
 
     }));

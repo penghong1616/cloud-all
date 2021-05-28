@@ -15,12 +15,10 @@ public class UserServiceFallBack implements  UserService{
   public String sayHello() {
     return "provider出错啦,无法为你提供服务";
   }
-
   @Override
   public User login(User user) {
     return null;
   }
-
   @Override
   public String buy(User user) {
     return null;

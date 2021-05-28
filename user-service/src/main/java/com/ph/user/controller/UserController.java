@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 @RequestMapping("/user")
 public class UserController {
-
   @Autowired
   UserService userService;
   @GetMapping("/")
@@ -24,6 +23,10 @@ public class UserController {
   @GetMapping("/luck")
   public String luck(){
     return "恭喜你，中将啦";
+  }
+  @GetMapping("/info")
+  public String userInfo(){
+    return "用户信息";
   }
   public String waiting(){
     return "排队中";

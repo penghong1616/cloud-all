@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 /**
  * @author 彭宏
@@ -13,6 +15,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
     DataSourceAutoConfiguration.class,
     HibernateJpaAutoConfiguration.class})
 @EnableDiscoveryClient
+@EnableFeignClients
+@EnableOAuth2Client
 public class ServiceAApplication {
 
     public static void main(String[] args) {

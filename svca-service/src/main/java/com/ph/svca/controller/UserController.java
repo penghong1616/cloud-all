@@ -1,5 +1,8 @@
 package com.ph.svca.controller;
 
+import com.ph.svca.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
+  @Autowired
+  UserService userService;
+  @GetMapping("/info")
+  public  String userInfo(){
+    return "svca"+userService.info();
+  }
   @RequestMapping(value = "/registry", method = RequestMethod.POST)
   public String createUser(@RequestParam("username") String username,
       @RequestParam("password") String password) {

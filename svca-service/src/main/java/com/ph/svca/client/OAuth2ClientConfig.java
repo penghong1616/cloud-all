@@ -2,23 +2,20 @@ package com.ph.svca.client;
 
 import feign.RequestInterceptor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsResourceDetails;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 /**
  * @Description: 配置OAuth2客户端
  * @author: penghong
  * @date: 2021/05/21/ 10:28
  */
-@Configuration
-@EnableOAuth2Client
-@EnableConfigurationProperties
+//@Configuration
+//@EnableOAuth2Client
+//@EnableConfigurationProperties
 public class OAuth2ClientConfig {
 
   @Bean
